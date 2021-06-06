@@ -31,9 +31,10 @@ Partial Class Form3
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Button3 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -111,13 +112,6 @@ Partial Class Form3
         Me.TextBox3.Size = New System.Drawing.Size(244, 20)
         Me.TextBox3.TabIndex = 8
         '
-        'TextBox4
-        '
-        Me.TextBox4.Location = New System.Drawing.Point(158, 142)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(244, 20)
-        Me.TextBox4.TabIndex = 9
-        '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(12, 196)
@@ -129,21 +123,39 @@ Partial Class Form3
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(123, 196)
+        Me.Button2.Location = New System.Drawing.Point(124, 196)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 11
         Me.Button2.Text = "Hapus"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(158, 141)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(244, 21)
+        Me.ComboBox1.TabIndex = 12
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(236, 196)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.TabIndex = 13
+        Me.Button3.Text = "Update"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(508, 435)
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TextBox4)
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
@@ -170,7 +182,8 @@ Partial Class Form3
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Button3 As Button
 End Class

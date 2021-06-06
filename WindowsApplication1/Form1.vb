@@ -19,13 +19,14 @@ Public Class Form1
         Call konek()
         SQL = "select * from barang"
 
-            myCommand.Connection = conn
-            myCommand.CommandText = SQL
-
-            myAdapter.SelectCommand = myCommand
-            myAdapter.Fill(myData)
+        myCommand.Connection = conn
+        myCommand.CommandText = SQL
+        myData.Clear()
+        myAdapter.SelectCommand = myCommand
+        myAdapter.Fill(myData)
 
         DataGridView1.DataSource = myData
+
     End Sub
     Sub bersihkanForm()
         Call konek()
@@ -45,9 +46,13 @@ Public Class Form1
     Sub aturDGV()
         Try
             DGV.Columns(0).HeaderText = "no"
-            DGV.Columns(1).HeaderText = "Nama"
-            DGV.Columns(2).HeaderText = "email"
-            DGV.Columns(3).HeaderText = "username"
+            DGV.Columns(1).HeaderText = "Kode Barang"
+            DGV.Columns(2).HeaderText = "Kategori Barang"
+            DGV.Columns(3).HeaderText = "Nama Barang"
+            DGV.Columns(4).HeaderText = "Quantity"
+            DGV.Columns(5).HeaderText = "Harga Beli"
+            DGV.Columns(6).HeaderText = "Harga Jual"
+            DGV.Columns(7).HeaderText = "Stok"
         Catch ex As Exception
         End Try
     End Sub
@@ -104,11 +109,10 @@ Public Class Form1
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        SQL = "UPDATE barang set kode='" & TextBox1.Text & "',kategori='" & TextBox2.Text & "',nama='" & TextBox3.Text & "',quantity ='" & TextBox4.Text & "',harga_beli='" & TextBox5.Text & "',harga_jual='" & TextBox6.Text & "',stok='" & TextBox7.Text & "' where kode='" & TextBox1.Text & "'"
+        SQL = "UPDATE barang set kode='" & TextBox1.Text & "',kategori='" & TextBox2.Text & "',nama='" & TextBox3.Text & "',quantity ='" & TextBox4.Text & "',harga_beli='" & TextBox5.Text & "',harga_jual='" & TextBox6.Text & "',stok='" & TextBox7.Text & "' where no='" & TextBox8.Text & "'"
         Call bersihkanForm()
         MsgBox("Data Telah Diperbarui!")
-        'Call tampilP().
-        DataGridView1.Refresh()
+        Call tampilP()
         Button1.Enabled = True
     End Sub
 
@@ -121,13 +125,18 @@ Public Class Form1
 
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+    Private Sub Button5_Click(sender As Object, e As EventArgs) 
         tampilP()
 
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
 
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Me.Visible = False
+        FormUtama.Visible = True
     End Sub
 End Class
 
